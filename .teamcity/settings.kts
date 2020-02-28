@@ -113,6 +113,10 @@ object OomLabJobs_update_oom : BuildType({
         vcs {
         }
     }
+
+    requirements {
+        contains("bubernetes", "151")
+    }
 })
 
 object OomLabJobs_GerritOom : GitVcsRoot({
