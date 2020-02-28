@@ -104,6 +104,7 @@ object OomLabJobs_update_oom : BuildType({
             name = "make onap"
             scriptContent = """
                 cd kubernetes
+                helm serve &
                 make all
             """.trimIndent()
         }
