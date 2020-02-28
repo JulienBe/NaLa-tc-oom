@@ -115,7 +115,7 @@ object OomLabJobs_update_oom : BuildType({
     }
 
     requirements {
-        contains("name", "151")
+        contains("agent.name", "151")
     }
 })
 
