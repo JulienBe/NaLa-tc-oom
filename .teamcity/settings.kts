@@ -113,10 +113,6 @@ object OomLabJobs_update_oom : BuildType({
         vcs {
         }
     }
-
-    requirements {
-        contains("agent.name", "ip")
-    }
 })
 
 object OomLabJobs_GerritOom : GitVcsRoot({
