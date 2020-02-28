@@ -115,7 +115,7 @@ object OomLabJobs_update_oom : BuildType({
     }
 
     requirements {
-        matches("bubernetes", "151")
+        contains("name", "151")
     }
 })
 
