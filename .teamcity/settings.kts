@@ -100,6 +100,7 @@ object OomLabJobs_OomDeployClamp : BuildType({
 
     vcs {
         root(OomLabJobs_NalaTcLab)
+        root(OomLabJobs_GerritOom)
     }
 
     steps {
