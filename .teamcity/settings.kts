@@ -114,7 +114,7 @@ object OomLabJobs_OomDeployClamp : BuildType({
 
     steps {
         script {
-            name = "make onap"
+            name = "deploy"
             scriptContent = "cd kubernetes"
         }
     }
