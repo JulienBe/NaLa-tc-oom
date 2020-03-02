@@ -87,8 +87,18 @@ object OomLabJobs : Project({
     vcsRoot(OomLabJobs_GerritOom)
     vcsRoot(OomLabJobs_HttpsGithubComChrisCAttTcOomLabJobsGitRefsHeadsMaster)
 
+    buildType(OomLabJobs_Deployminimuminfra)
     buildType(OomLabJobs_OomDeployClamp)
     buildType(OomLabJobs_update_oom)
+})
+
+object OomLabJobs_Deployminimuminfra : BuildType({
+    name = "deployminimuminfra"
+    description = "minimum infra deployment for the lab"
+
+    enablePersonalBuilds = false
+    type = BuildTypeSettings.Type.DEPLOYMENT
+    maxRunningBuilds = 1
 })
 
 object OomLabJobs_OomDeployClamp : BuildType({
