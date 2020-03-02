@@ -106,7 +106,7 @@ object OomLabJobs_OomDeployClamp : BuildType({
     steps {
         script {
             name = "deploy"
-            scriptContent = "cd kubernetes"
+            scriptContent = "helm deploy dev local/onap --namespace onap -f .teamcity/labSettings/onap-infra.yaml -f overrides/timeouts.yaml"
         }
     }
 
