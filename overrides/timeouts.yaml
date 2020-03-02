@@ -1,0 +1,4 @@
+liveness:
+  initialDelaySeconds: 100
+readiness:
+  initialDelaySeconds: 100
