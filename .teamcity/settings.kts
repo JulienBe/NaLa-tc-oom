@@ -103,11 +103,7 @@ object OomLabJobs_OomDeployClamp : BuildType({
     steps {
         script {
             name = "make onap"
-            scriptContent = """
-                cd kubernetes
-                helm serve &
-                make all
-            """.trimIndent()
+            scriptContent = "cd kubernetes"
         }
     }
 
