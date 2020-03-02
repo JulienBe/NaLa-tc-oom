@@ -91,6 +91,8 @@ object OomLabJobs : Project({
     buildType(OomLabJobs_Deployminimuminfra)
     buildType(OomLabJobs_OomDeployClamp)
     buildType(OomLabJobs_update_oom)
+
+    subProject(OomLabJobs_TestPipeplines)
 })
 
 object OomLabJobs_Deployminimuminfra : BuildType({
@@ -177,4 +179,10 @@ object OomLabJobs_NalaTcLab : GitVcsRoot({
         userName = "JulienBe"
         password = "credentialsJSON:c253f0a4-30c3-4762-8987-63b6ff4e3732"
     }
+})
+
+
+object OomLabJobs_TestPipeplines : Project({
+    name = "test pipeplines"
+    description = "test pipelines triggered by gerrit patchset"
 })
