@@ -175,6 +175,6 @@ object OomLabJobs_NalaTcLab : GitVcsRoot({
     pushUrl = "https://github.com/JulienBe/NaLa-tc-oom.git"
     authMethod = password {
         userName = "JulienBe"
-        password = "credentialsJSON:b7366534-f9d5-4946-a719-3bd392482ec9"
+        password = "credentialsJSON:c253f0a4-30c3-4762-8987-63b6ff4e3732"
     }
 })
