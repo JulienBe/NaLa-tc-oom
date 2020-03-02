@@ -86,6 +86,7 @@ object OomLabJobs : Project({
 
     vcsRoot(OomLabJobs_GerritOom)
     vcsRoot(OomLabJobs_HttpsGithubComChrisCAttTcOomLabJobsGitRefsHeadsMaster)
+    vcsRoot(OomLabJobs_NalaTcLab)
 
     buildType(OomLabJobs_Deployminimuminfra)
     buildType(OomLabJobs_OomDeployClamp)
@@ -106,7 +107,7 @@ object OomLabJobs_OomDeployClamp : BuildType({
     description = "update helm repository with latest oom charts from master"
 
     vcs {
-        root(OomLabJobs_HttpsGithubComChrisCAttTcOomLabJobsGitRefsHeadsMaster)
+        root(OomLabJobs_NalaTcLab)
     }
 
     steps {
@@ -166,4 +167,14 @@ object OomLabJobs_HttpsGithubComChrisCAttTcOomLabJobsGitRefsHeadsMaster : GitVcs
     name = "https://github.com/ChrisC-att/tc-oom-lab-jobs.git#refs/heads/master"
     url = "https://github.com/ChrisC-att/tc-oom-lab-jobs.git"
     pushUrl = "https://github.com/ChrisC-att/tc-oom-lab-jobs.git"
+})
+
+object OomLabJobs_NalaTcLab : GitVcsRoot({
+    name = "nala-tc-lab"
+    url = "https://github.com/JulienBe/NaLa-tc-oom.git"
+    pushUrl = "https://github.com/JulienBe/NaLa-tc-oom.git"
+    authMethod = password {
+        userName = "JulienBe"
+        password = "credentialsJSON:b7366534-f9d5-4946-a719-3bd392482ec9"
+    }
 })
