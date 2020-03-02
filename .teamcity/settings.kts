@@ -97,7 +97,6 @@ object OomLabJobs_OomDeployClamp : BuildType({
 
     vcs {
         root(OomLabJobs_HttpsGithubComChrisCAttTcOomLabJobsGitRefsHeadsMaster)
-        root(OomLabJobs_GerritOom)
     }
 
     steps {
