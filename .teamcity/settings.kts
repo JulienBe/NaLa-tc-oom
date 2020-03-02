@@ -87,7 +87,38 @@ object OomLabJobs : Project({
     vcsRoot(OomLabJobs_GerritOom)
     vcsRoot(OomLabJobs_HttpsGithubComChrisCAttTcOomLabJobsGitRefsHeadsMaster)
 
+    buildType(OomLabJobs_OomDeployClamp)
     buildType(OomLabJobs_update_oom)
+})
+
+object OomLabJobs_OomDeployClamp : BuildType({
+    name = "oom deploy clamp"
+    description = "update helm repository with latest oom charts from master"
+
+    vcs {
+        root(OomLabJobs_HttpsGithubComChrisCAttTcOomLabJobsGitRefsHeadsMaster)
+        root(OomLabJobs_GerritOom)
+    }
+
+    steps {
+        script {
+            name = "make onap"
+            scriptContent = """
+                cd kubernetes
+                helm serve &
+                make all
+            """.trimIndent()
+        }
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+
+    requirements {
+        contains("system.agent.name", "ip_10.0.0.151")
+    }
 })
 
 object OomLabJobs_update_oom : BuildType({
