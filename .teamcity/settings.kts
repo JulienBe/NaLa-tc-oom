@@ -87,6 +87,7 @@ object OomLabJobs : Project({
     vcsRoot(OomLabJobs_GerritOom)
     vcsRoot(OomLabJobs_HttpsGithubComChrisCAttTcOomLabJobsGitRefsHeadsMaster)
     vcsRoot(OomLabJobs_NalaTcLab)
+    vcsRoot(OomLabJobs_GerritOom1)
 
     buildType(OomLabJobs_OomDeployClamp)
     buildType(OomLabJobs_update_oom)
@@ -126,7 +127,7 @@ object OomLabJobs_update_oom : BuildType({
 
     vcs {
         root(OomLabJobs_HttpsGithubComChrisCAttTcOomLabJobsGitRefsHeadsMaster)
-        root(OomLabJobs_GerritOom)
+        root(OomLabJobs_GerritOom1)
     }
 
     steps {
@@ -154,6 +155,13 @@ object OomLabJobs_GerritOom : GitVcsRoot({
     name = "gerrit_oom"
     pollInterval = 86400
     url = "https://gerrit.onap.org/r/oom"
+})
+
+object OomLabJobs_GerritOom1 : GitVcsRoot({
+    name = "gerrit_oom (1)"
+    pollInterval = 86400
+    url = "https://gerrit.onap.org/r/oom"
+    useMirrors = false
 })
 
 object OomLabJobs_HttpsGithubComChrisCAttTcOomLabJobsGitRefsHeadsMaster : GitVcsRoot({
