@@ -116,7 +116,7 @@ object OomLabJobs_OomDeployClamp : BuildType({
     }
 
     requirements {
-        equals("system.agent.name", "ip_10.0.0.151")
+        equals("system.agent.name", "Default Agent")
     }
 })
 
