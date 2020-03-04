@@ -114,6 +114,10 @@ object OomLabJobs_OomDeployClamp : BuildType({
         vcs {
         }
     }
+
+    requirements {
+        equals("system.agent.name", "ip_10.0.0.151")
+    }
 })
 
 object OomLabJobs_update_oom : BuildType({
