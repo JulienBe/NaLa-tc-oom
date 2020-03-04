@@ -146,7 +146,7 @@ object OomLabJobs_update_oom : BuildType({
     }
 
     requirements {
-        contains("system.agent.name", "ip_10.0.0.151")
+        equals("system.agent.name", "Default Agent")
     }
 })
 
