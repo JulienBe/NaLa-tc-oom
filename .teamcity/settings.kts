@@ -108,7 +108,7 @@ object OomLabJobs_OomDeployAaf : BuildType({
     steps {
         script {
             name = "deploy"
-            scriptContent = "helm deploy dev local/onap --namespace onap -f .teamcity/labSettings/onap-infra.yaml -f overrides/timeouts.yaml"
+            scriptContent = "helm deploy dev local/onap --namespace onap -f .teamcity/labSettings/onap-aaf.yaml -f overrides/timeouts.yaml"
         }
     }
 
