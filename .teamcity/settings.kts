@@ -91,8 +91,35 @@ object OomLabJobs : Project({
 
     buildType(OomLabJobs_OomDeployClamp)
     buildType(OomLabJobs_update_oom)
+    buildType(OomLabJobs_OomDeployAaf)
 
     subProject(OomLabJobs_TestPipeplines)
+})
+
+object OomLabJobs_OomDeployAaf : BuildType({
+    name = "oom deploy aaf"
+    description = "update helm repository with latest oom charts from master"
+
+    vcs {
+        root(OomLabJobs_NalaTcLab)
+        root(OomLabJobs_GerritOom, "+:. => oom")
+    }
+
+    steps {
+        script {
+            name = "deploy"
+            scriptContent = "helm deploy dev local/onap --namespace onap -f .teamcity/labSettings/onap-infra.yaml -f overrides/timeouts.yaml"
+        }
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+
+    requirements {
+        equals("system.agent.name", "Default Agent")
+    }
 })
 
 object OomLabJobs_OomDeployClamp : BuildType({
